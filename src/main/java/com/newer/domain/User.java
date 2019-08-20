@@ -11,6 +11,7 @@ public class User implements Serializable {
     private Integer ustate  ;
     private Date urtime  ;
 
+
     public Integer getUid() {
         return uid;
     }
