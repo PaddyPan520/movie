@@ -1,6 +1,8 @@
 package com.newer.service;
 
+import com.newer.domain.Admin;
 import com.newer.domain.User;
+import com.newer.mapper.AdminMapper;
 import com.newer.mapper.UserMapper;
 import com.newer.util.SqlSessionUtil;
 import org.apache.ibatis.session.SqlSession;
@@ -24,5 +26,15 @@ public class UserService {
         if(sqlSession!=null){
             SqlSessionUtil.closeSqlSession(sqlSession);
         }
+    }
+
+    public User loginUser(String uname, String upwd) {
+        User user = userMapper.loginUser(uname,upwd);
+        return user;
+    }
+
+    public Admin loginAdmin(String aname, String apwd) {
+        AdminMapper adminMapper =sqlSession.getMapper(AdminMapper.class);
+        return adminMapper.loginAdmin(aname,apwd);
     }
 }

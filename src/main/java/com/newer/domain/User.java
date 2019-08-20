@@ -1,8 +1,7 @@
 package com.newer.domain;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
-import java.util.Date;
+import java.sql.Date;
 
 public class User implements Serializable {
     private Integer  uid  ;
@@ -10,8 +9,7 @@ public class User implements Serializable {
     private String upwd  ;
     private String uphone  ;
     private Integer ustate  ;
-    private Timestamp urtime  ;
-    private Integer upermission ;
+    private Date urtime  ;
 
     public Integer getUid() {
         return uid;
@@ -53,32 +51,13 @@ public class User implements Serializable {
         this.ustate = ustate;
     }
 
-    public Timestamp getUrtime() {
+    public Date getUrtime() {
         return urtime;
     }
 
-    public void setUrtime(Timestamp urtime) {
+    public void setUrtime(Date urtime) {
         this.urtime = urtime;
     }
 
-    public Integer getUpermission() {
-        return upermission;
-    }
 
-    public void setUpermission(Integer upermission) {
-        this.upermission = upermission;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "uid=" + uid +
-                ", uname='" + uname + '\'' +
-                ", upwd='" + upwd + '\'' +
-                ", uphone='" + uphone + '\'' +
-                ", ustate=" + ustate +
-                ", urtime=" + urtime +
-                ", upermission=" + upermission +
-                '}';
-    }
 }
