@@ -25,6 +25,7 @@
 
     <!--映射文件配置-->
     <mappers>
-
+    <mapper class="com.newer.mapper.AdminMapper"/>
+        <mapper class="com.newer.mapper.UserMapper"/>
     </mappers>
 </configuration>
