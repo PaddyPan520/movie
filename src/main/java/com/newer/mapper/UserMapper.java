@@ -1,7 +1,7 @@
 package com.newer.mapper;
 
-import com.newer.domain.User;
 import org.apache.ibatis.annotations.*;
+import com.newer.domain.User;
 
 public interface UserMapper {
     @Insert("insert into user values(null,#{uname},#{upwd},#{uphone},#{ustate},#{urtime})" )

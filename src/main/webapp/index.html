@@ -195,11 +195,12 @@
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
 				<h4>Login</h4>
 				<div class="login-form">
-					<form action="#" method="post">
-						<input type="email" name="email" placeholder="E-mail" required="">
-						<input type="password" name="password" placeholder="Password" required="">
+					<form id="form1" method="post">
+						<input type="hidden" name="action" value="login">
+						<input type="text" name="uname" placeholder="Name" required="">
+						<input type="password" name="upwd" placeholder="Password" required="">
 						<div class="tp">
-							<input type="submit" value="LOGIN NOW">
+							<button id="btu1" type="button" >登录</button>
 						</div>
 						<div class="forgot-grid">
 							<div class="log-check">
@@ -228,18 +229,18 @@
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
 				<h4>Register</h4>
 				<div class="login-form">
-					<form action="#" method="post">
-						<input type="text" name="name" placeholder="Name" required="">
-						<input type="email" name="email" placeholder="E-mail" required="">
-						<input type="password" name="password" placeholder="Password" required="">
-						<input type="password" name="conform password" placeholder="Confirm Password" required="">
+					<form id="form2" method="post">
+						<input type="hidden" name="action" value="add">
+						<input type="text" name="uname" placeholder="Name" required="">
+						<input type="password" name="upwd" placeholder="Password" required="">
+						<input type="text" name="uphone" placeholder="phone" required="">
 						<div class="signin-rit">
 													<span class="agree-checkbox">
 														<label class="checkbox"><input type="checkbox" name="checkbox">I agree to your <a class="w3layouts-t" href="#" target="_blank">Terms of Use</a> and <a class="w3layouts-t" href="#" target="_blank">Privacy Policy</a></label>
 													</span>
 						</div>
 						<div class="tp">
-							<input type="submit" value="REGISTER NOW">
+							<button id="btu2" type="button" >注册</button>
 						</div>
 					</form>
 				</div>
@@ -1939,6 +1940,35 @@
 <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 
 <script src="js/jquery-1.11.1.min.js"></script>
+<script>
+    $("#btu1").click(()=>{
+        $.ajax({
+            url:"users",
+            data:$("#form1").serialize(),
+            type:"POST",
+            success:function (data){
+                alert(data)
+				location.href="http://www.baidu.com"
+            }
+        })
+    })
+
+    $("#btu2").click(()=>{
+        $.ajax({
+            url:"users",
+            data:$("#form2").serialize(),
+            type:"POST",
+            success:function (data){
+                if(data){
+                    alert("添加成功！")
+                    $("#form2").get(0).reset()
+                }
+            }
+        })
+    })
+
+</script>
+
 <!-- Dropdown-Menu-JavaScript -->
 <script>
     $(document).ready(function(){

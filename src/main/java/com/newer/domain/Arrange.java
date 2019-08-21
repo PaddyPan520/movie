@@ -1,12 +1,13 @@
 package com.newer.domain;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class Arrange implements Serializable {
        private Integer aid;
-       private Date starttime;
-       private Date endtime;
+       private Timestamp starttime;
+       private Timestamp endtime;
        private Integer hnum;
        private String spare;
 
@@ -18,19 +19,19 @@ public class Arrange implements Serializable {
         this.aid = aid;
     }
 
-    public Date getStarttime() {
+    public Timestamp getStarttime() {
         return starttime;
     }
 
-    public void setStarttime(Date starttime) {
+    public void setStarttime(Timestamp starttime) {
         this.starttime = starttime;
     }
 
-    public Date getEndtime() {
+    public Timestamp getEndtime() {
         return endtime;
     }
 
-    public void setEndtime(Date endtime) {
+    public void setEndtime(Timestamp endtime) {
         this.endtime = endtime;
     }
 

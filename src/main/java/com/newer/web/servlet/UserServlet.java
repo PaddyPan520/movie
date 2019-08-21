@@ -33,8 +33,6 @@ public class UserServlet extends HttpServlet {
             addUser(req,resp);
         }else if("login".equals(action)){
             loginUser(req,resp);
-        }else if("yzm".equals(action)){
-           // sendSms(req,resp);
         }else if("adminlogin".equals(action)){
             adminlogin(req,resp);
         }
